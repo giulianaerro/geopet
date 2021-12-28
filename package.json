@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev:front": "parcel serve ./client/index.html",
-    "build:front": "parcel build ./client/index.html",
+    "build:front": "parcel build ./client/index.html --dist-dir ./dist",
     "dev": "nodemon --watch './server/index.ts' --exec 'ts-node ./server/index.ts'",
     "build:api": "tsc",
     "test": "ava",

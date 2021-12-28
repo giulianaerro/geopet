@@ -11,7 +11,10 @@ customElements.define(
 
       const currentState = state.getState();
 
-      const cerrarSesion: any = this.querySelector(".button-blue");
+      let cerrarSesion: any = this.querySelector(".button-blue");
+      let cerrarSesionBurger: any = this.querySelector(".button-blue-burger");
+      let iniciarSesion: any = this.querySelector(".button-red");
+      let iniciarSesionBurger: any = this.querySelector(".button-red-burger");
 
       cerrarSesion.addEventListener("click", () => {
         state.cerrarSesion();
@@ -19,8 +22,6 @@ customElements.define(
           location.reload();
         }, 1000);
       });
-
-      const cerrarSesionBurger: any = this.querySelector(".button-blue-burger");
 
       cerrarSesionBurger.addEventListener("click", () => {
         state.cerrarSesion();
@@ -30,27 +31,11 @@ customElements.define(
       });
 
       if (currentState.user.token == "") {
-        const iniciarSesion: any = this.querySelector(".button-red");
-        const cerrarSesion: any = this.querySelector(".button-blue");
-        const cerrarSesionBurger: any = this.querySelector(
-          ".button-blue-burger"
-        );
-        const iniciarSesionBurger: any =
-          this.querySelector(".button-red-burger");
-
         cerrarSesionBurger.style = "display:none";
         cerrarSesion.style = "display:none";
         iniciarSesion.style = "display:inherit";
         iniciarSesionBurger.style = "display:inherit";
       } else {
-        const cerrarSesion: any = this.querySelector(".button-blue");
-        const iniciarSesion: any = this.querySelector(".button-red");
-        const iniciarSesionBurger: any =
-          this.querySelector(".button-red-burger");
-        const cerrarSesionBurger: any = this.querySelector(
-          ".button-blue-burger"
-        );
-
         cerrarSesionBurger.style = "display:inherit";
         cerrarSesion.style = "display:inherit";
         iniciarSesion.style = "display:none";
