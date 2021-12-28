@@ -80,31 +80,23 @@ customElements.define(
       const myLostPetsBurger = this.querySelector(".my-lost-pets-burger");
       const publishPetBurger = this.querySelector(".publish-pet-burger");
 
+      const listeners = [
+        myData,
+        myLostPets,
+        publishPet,
+        myDataBurger,
+        myLostPetsBurger,
+        publishPetBurger,
+        iniciarSesionBurger,
+        iniciarSesion,
+      ];
+
       if (currentState.user.token == "") {
-        iniciarSesionBurger.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        iniciarSesion.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        myData.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        myLostPets.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        publishPet.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        myDataBurger.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        myLostPetsBurger.addEventListener("click", () => {
-          Router.go("/auth");
-        });
-        publishPetBurger.addEventListener("click", () => {
-          Router.go("/auth");
-        });
+        for (const l of listeners) {
+          l.addEventListener("click", () => {
+            Router.go("/auth");
+          });
+        }
       } else {
         myData.addEventListener("click", () => {
           Router.go("/signup");
