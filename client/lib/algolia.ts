@@ -2,11 +2,8 @@ import mapboxgl from "mapbox-gl";
 import * as mapboxClient from "mapbox";
 import { state } from "../../client/state";
 
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoiZ2l1bGllcnJvIiwiYSI6ImNrd2IyNjdvZDAwYmwydnAzNjhkNTRwdncifQ.gNKIEIEGRLoOt1JLlyF8HQ";
-
 export async function mapAlgolia() {
-  const clientMapbox = await new mapboxClient(MAPBOX_TOKEN);
+  const clientMapbox = await new mapboxClient(process.env.MAPBOX_TOKEN);
 
   mapboxgl.accessToken = MAPBOX_TOKEN;
   const map = await new mapboxgl.Map({
