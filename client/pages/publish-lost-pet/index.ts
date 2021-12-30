@@ -3,7 +3,7 @@ const imgLogo = require("../../img/imgLogo.png");
 import { Dropzone } from "dropzone";
 import { state } from "../../state";
 import { Router } from "@vaadin/router";
-import { mapAlgolia } from "../../../server/lib/algolia";
+import { mapAlgolia } from "../../lib/algolia";
 
 export class Reportpet extends HTMLElement {
   connectedCallback() {
