@@ -217,6 +217,7 @@ const state = {
 
     if (resSendReport == true) {
       window.alert("Su reporte ha sido enviado");
+      location.reload();
     } else {
       window.alert("No pudimos enviar tu reporte");
     }
