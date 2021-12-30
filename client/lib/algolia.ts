@@ -5,7 +5,7 @@ import { state } from "../../client/state";
 export async function mapAlgolia() {
   const clientMapbox = await new mapboxClient(process.env.MAPBOX_TOKEN);
 
-  mapboxgl.accessToken = MAPBOX_TOKEN;
+  mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
   const map = await new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11",
